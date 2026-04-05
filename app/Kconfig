@@ -1,0 +1,72 @@
+menuconfig  LED_SUBSYSTEM
+  bool  "LED Subsystem"
+  default n
+
+if  LED_SUBSYSTEM
+
+  choice
+       
+      prompt "LED Blinking Speed"
+      default BLINK_LED_250_MS
+
+      config BLINK_LED_250_MS
+      bool "250 ms (fast)"
+      config BLINK_LED_500_MS
+      bool "500 ms (medium-fast)"
+      config BLINK_LED_1000_MS
+      bool "1s (medium)"
+      config BLINK_LED_2000_MS
+      bool "2s (slow)"
+
+  endchoice
+
+  config BLINK_SLEEP_MS
+      int    # hidden
+       
+
+      default 100 if BLINK_LED_250_MS
+      default 500 if BLINK_LED_500_MS
+      default 1000 if BLINK_LED_1000_MS
+      default 2000 if BLINK_LED_2000_MS
+
+      default 0
+      help
+        Time in milliseconds to sleep between toggling the LED. Adjust this value to change the blinking speed of the LED.
+
+  menuconfig  ADVANCED_LED_SETTINGS
+    bool  "Advanced LED Settings"
+     
+    default n
+
+    config LED_BRIGHTNESS_MS
+      depends on ADVANCED_LED_SETTINGS
+      int "LED Brightness"
+      default 100
+      range 0 100
+
+    config LED_FADE_DURATION_MS
+      depends on ADVANCED_LED_SETTINGS
+      int "LED Fade Duration (ms)"
+      default 500
+      range  0 5000
+
+
+menu "Expert Settings"
+   visible if LED_SUBSYSTEM
+   depends on ADVANCED_LED_SETTINGS 
+   config ENABLE_LED_DEBUGGING
+      bool "Enable LED Debugging"
+      default n
+      help
+        Enable this option to print debug information about LED state changes and timing. This can be useful for troubleshooting and optimizing LED behavior.
+
+    config CUSTOM_BLINk_PATTERN
+      bool "Custom Blink Pattern" 
+      default n 
+      help
+        Enable this option to define a custom blink pattern for the LED. When enabled, you can specify a sequence of on/off durations to create unique blinking effects.
+endmenu                
+       
+endif   
+       
+source "Kconfig.zephyr"
