@@ -3,7 +3,10 @@ menuconfig  LED_SUBSYSTEM
   default n
 
 if  LED_SUBSYSTEM
-
+  config APP_HEART_BEAT_PERIOD
+    int "HEART BEAT TOGGLE LED PERIOD mS"
+    default 500
+    range 100 2000 
   choice
        
       prompt "LED Blinking Speed"
@@ -69,4 +72,6 @@ endmenu
        
 endif   
        
+
+
 source "Kconfig.zephyr"

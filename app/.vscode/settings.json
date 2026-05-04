@@ -1,0 +1,18 @@
+{
+    "zephyr-workbench.westWorkspace": "/home/arouatbi/Desktop/zephyrPractice",
+    "zephyr-workbench.board": "apard32690/max32690/m4",
+    "zephyr-workbench.toolchain": "zephyr_sdk",
+    "zephyr-workbench.sdk": "/home/arouatbi/zephyr-sdk-1.0.1/zephyr-sdk-1.0.1",
+    "zephyr-workbench.build.pristine": "auto",
+    "zephyr-workbench.build.configurations": [
+        {
+            "name": "primary",
+            "board": "apard32690/max32690/m4",
+            "active": "true"
+        }
+    ],
+    "cmake.configureOnOpen": false,
+    "cmake.enableAutomaticKitScan": false,
+    "C_Cpp.default.compilerPath": "/home/arouatbi/zephyr-sdk-1.0.1/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/primary/compile_commands.json"
+}
