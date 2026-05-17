@@ -1,0 +1,6 @@
+board:
+  name: custom_board
+  full_name: CUSTOM_BOARD
+  vendor: nxp
+  socs:
+  - name: mcxa156

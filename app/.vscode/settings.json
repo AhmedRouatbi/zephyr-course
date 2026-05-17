@@ -1,7 +1,7 @@
 {
     "zephyr-workbench.westWorkspace": "/home/arouatbi/Desktop/zephyrPractice",
     "zephyr-workbench.board": "apard32690/max32690/m4",
-    "zephyr-workbench.toolchain": "zephyr_sdk",
+    "zephyr-workbench.toolchain": "zephyr",
     "zephyr-workbench.sdk": "/home/arouatbi/zephyr-sdk-1.0.1/zephyr-sdk-1.0.1",
     "zephyr-workbench.build.pristine": "auto",
     "zephyr-workbench.build.configurations": [
