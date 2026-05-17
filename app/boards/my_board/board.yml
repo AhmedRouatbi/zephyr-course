@@ -1,0 +1,6 @@
+board:
+  name: my_board
+  full_name: MY_BOARD from scratch
+  vendor: ar
+  socs:
+  - name: mcxa156
